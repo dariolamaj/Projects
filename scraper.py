@@ -31,4 +31,4 @@ for i in range(1, wb2_sheet.max_row+1):
         wb_sheet.cell(row=i, column=j).value = wb2_sheet.cell(row=i, column=j).value
         
 wb.save(str(today)+ ".xlsx")
-os.remove(str(yesterday)+ ".xlsx)
+os.remove(str(yesterday)+ ".xlsx")
