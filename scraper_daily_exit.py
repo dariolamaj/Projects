@@ -1,7 +1,5 @@
-import os
 import requests
 from datetime import date, timedelta
-from openpyxl import load_workbook
 
 #parameter "yesterday" oznacuje prvy den, od ktoreho sa budu data stahovat
 #parameter "days" je mozne zmenit na den od ktoreho sa budu data stahovat
