@@ -1,0 +1,25 @@
+import pandas as pd
+
+old_data = pd.read_excel("Template.xlsx","Sheet1",usecols=[2,5,9])
+new_data = pd.read_excel("Template.xlsx","Sheet2",usecols=[2,5,9])
+
+
+new_data_emails = new_data['E-Mail'].tolist()
+old_data_emails = old_data['E-Mail'].tolist()
+
+new_emails = []
+deleted_emails = []
+
+for email in new_data_emails:
+    if email not in old_data_emails:
+            new_emails.append(email)
+
+for email in old_data_emails:
+    if email not in new_data_emails:
+            deleted_emails.append(email)
+
+
+print("NEW EMAILS")
+print(new_data.loc[new_data['E-Mail'].isin(new_emails)])
+print("DELETED EMAILS")
+print(old_data.loc[old_data['E-Mail'].isin(deleted_emails)])
